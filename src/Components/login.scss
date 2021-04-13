@@ -1,0 +1,142 @@
+.login-main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3f2fd;
+  .login-block {
+    width: 70%;
+    height: 80%;
+    border-radius: 5%;
+    display: flex;
+    .l-b-left {
+      width: 50%;
+      // height: 100%;
+     
+      background-color:#ff725ea8;
+    }
+
+    .l-b-right {
+      width: 50%;
+      height: 100%;
+      background-color: white;
+      padding: 5%;
+      box-sizing: border-box;
+      .l-b-r-text {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+       
+        flex-direction: column;
+        h2,
+        p {
+          margin: 0;
+        }
+      }
+      .l-b-r-buttons {
+        display: flex;
+        justify-content: space-between;
+        width:100%;
+       
+        
+        button {
+          &:nth-child(1) {
+            cursor: pointer;
+            background-color: white;
+            width: 45%;
+            border: 1px solid grey;
+            height: 30px;
+            margin-top: 20px;
+           &:hover{
+            transform: scale(1.2);
+            transition:0.7s;
+           }
+          
+          }
+          &:nth-child(2) {
+            cursor: pointer;
+        
+            background-color: white;
+            width: 45%;
+            border: 1px solid grey;
+            height: 30px;
+            margin-top: 20px;
+            &:hover{
+              transform: scale(1.2);
+              transition:0.7s;
+             }
+          }
+        }
+      }
+    .l-b-r-email{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    input{
+      height: 20px;
+      padding: 1%;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid grey;
+    }
+    .input-red{
+      border: 1px solid red;
+    }
+    .input-normal{
+     
+      border: 1px solid grey;
+    }
+    .validate-email{
+      font-size: 12px;
+      color: red;
+      margin-top: 2px;
+    }
+    }
+    .l-b-r-password{
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      input{
+        height: 20px;
+        padding: 1%;
+        margin-top: 10px;
+        border-radius: 5px;
+       
+      
+      }
+      .input-red{
+        border: 1px solid red;
+      }
+      .input-normal{
+       
+        border: 1px solid grey;
+      }
+      .validate-email{
+        font-size: 12px;
+        color: red;
+        margin-top: 2px;
+      }
+      }
+      .l-b-r-submit{
+        width: 100%;
+        height: 40px;
+        margin-top: 50px;
+        border-radius: 15px;
+        color:white;
+        background-color: coral;
+      
+        cursor: pointer;
+        // &:focus{
+        //   border:none;
+        //          }
+        // &:hover{
+        //   transform: scale(1.1);
+        //   transition: 1s;
+        // }
+      }
+    }
+  }
+}
