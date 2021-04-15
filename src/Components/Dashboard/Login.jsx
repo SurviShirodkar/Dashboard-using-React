@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Redirect, Route, useHistory } from "react-router";
-import { constantarray } from "../constant";
-import DashboardBody from "./DashboardBody";
+import {useHistory } from "react-router";
+import { constantarray } from "../../constant";
 import leftimage from "./leftimage.svg";
 import "./login.scss";
 
@@ -9,7 +8,7 @@ export default function Login() {
   let history=useHistory();
   const [credentials,setCredentials]= React.useState({email: "", password:""});
   const [error,setError]= React.useState("");
-  
+ 
   const SubmitCredentials = ()=>{
  
   const temp = constantarray.users.find(e => e.email === credentials.email);
@@ -19,7 +18,8 @@ export default function Login() {
     return;
   }
   if(credentials.password === temp.password){
-  history.push("/DashboardBody");
+  history.push("/Dashboard");
+  localStorage.setItem("email",credentials.email);
   }
   else
   {

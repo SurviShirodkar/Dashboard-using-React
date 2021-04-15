@@ -1,15 +1,18 @@
 
 import { Route, Switch } from 'react-router';
 import './App.css';
-import DashboardBody from './Components/DashboardBody';
-import Login from './Components/Login';
+import Dashboard from './Components/Dashboard/Dashboard';
+import Login from './Components/Dashboard/Login';
+
+
 
 function App() {
   return (
+    
     <div className="App">
       <Switch>
         <Route path='/login' component = {Login}></Route>
-        <Route path="/dashboardBody" component ={DashboardBody}></Route>
+        <Route path="/dashboard" component ={Dashboard}></Route>
         <Route path="/" component ={Login}></Route>
    
       </Switch>

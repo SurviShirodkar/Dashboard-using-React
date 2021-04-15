@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function dashboard() {
+export default function AddParticipant() {
     return (
         <div>
-            <h4>this is dashboard</h4>
+            
         </div>
     )
 }
