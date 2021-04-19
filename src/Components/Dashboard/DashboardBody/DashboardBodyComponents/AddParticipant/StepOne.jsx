@@ -17,32 +17,15 @@ const [details,setDetails]=React.useState({
     ticket:""
 }); 
   const ChangeStep = () =>{
-      
-      console.log(setStep);
-      plist.updateParticipantList([...plist.participantList,details]);
-      if(!details.firstname)
-            {
-    //             setError("firstname");
-    //         return;
-    //         }
-    //    else if(!details.lastname)     
-    //         {
-    //             setError("lastname");
-    //         return;
-    //         }
-    //         else
-    //         {
-    //             alert("form incomplete");
-            }
-    
-      setStep(1);
+      setStep(1)
+     
   }
 
 
     return (
         <div className="add-participant">
         <h5>Add participant</h5>
-        <form>
+        <form onSubmit={e=>{e.preventDefault(); ChangeStep()}}>
            <div className="form-group">
                <div className="form-input">
                    <label className="label" >First Name</label>
@@ -56,7 +39,7 @@ const [details,setDetails]=React.useState({
                    { error === "firstname"?<p className="validate" >please enter your name</p>:""}
                </div>
                <div className="form-input">
-                   <label className="label" required>Last Name</label>
+                   <label className="label" >Last Name</label>
                    <input
                    className="input" 
                    type="text" 
@@ -69,12 +52,12 @@ const [details,setDetails]=React.useState({
            </div>
            <div className="form-group">
                <div className="form-email">
-                   <label className="label" required>Email</label>
+                   <label className="label" >Email</label>
                    <input 
                    className="input" 
                    type="text" 
                    placeholder="Survishirodkar@gmail.com" 
-                  
+                  required
                    onChange={(e)=>setDetails({...details,email:e.target.value})}
                    ></input>
                </div>
@@ -86,7 +69,7 @@ const [details,setDetails]=React.useState({
                    className="input" 
                    type="text" 
                    placeholder="9370071402" 
-                 
+                   required
                    onChange={(e)=>setDetails({...details,contactno:e.target.value})}
                    ></input>
                </div>
@@ -98,7 +81,7 @@ const [details,setDetails]=React.useState({
                    className="input" 
                    type="text" 
                    placeholder="Bicholim" 
-                 
+                   required
                    onChange={(e)=>setDetails({...details,city:e.target.value})}
                    ></input>
                </div>
@@ -108,7 +91,7 @@ const [details,setDetails]=React.useState({
                    className="input" 
                    type="text" 
                    placeholder="Goa" 
-                 
+                   required
                    onChange={(e)=>setDetails({...details,state:e.target.value})}
                    ></input>
                </div>
@@ -150,7 +133,7 @@ const [details,setDetails]=React.useState({
                      </select>
                  </div>
            </div>
-           <button type="text" className="button" onClick={()=>ChangeStep()}>Save</button>
+           <button type="text" className="button">Save</button>
         </form>
      </div>
 
