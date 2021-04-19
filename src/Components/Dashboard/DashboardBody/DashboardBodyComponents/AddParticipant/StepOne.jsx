@@ -17,58 +17,7 @@ const [details,setDetails]=React.useState({
     ticket:""
 }); 
   const ChangeStep = () =>{
-      
-      console.log(setStep);
-      plist.updateParticipantList([...plist.participantList,details]);
-      if(!details.firstname)
-            {
-                setError("firstname");
-            return;
-            }
-       else if(!details.lastname)     
-            {
-                setError("lastname");
-            return;
-            }
-      else if(!details.email)     
-            {
-                setError("email");
-            return;
-            }
-      else if(!details.contactno)     
-            {
-                setError("contactno");
-            return;
-            } 
-      else if(!details.city)     
-            {
-                setError("city");
-            return;
-            }
-      else if(!details.state)     
-            {
-                setError("state");
-            return;
-            }   
-      else if(!details.event)     
-            {
-                setError("event");
-            return;
-            } 
-      else if(!details.gender)     
-            {
-                setError("gender");
-            return;
-            } 
-      else if(!details.ticket)     
-            {
-                setError("ticket");
-            return;
-            }  
-            else{
-                setStep(1);
-            }              
-    
+      setStep(1)
      
   }
 
@@ -76,7 +25,7 @@ const [details,setDetails]=React.useState({
     return (
         <div className="add-participant">
         <h5>Add participant</h5>
-        <form>
+        <form onSubmit={e=>{e.preventDefault(); ChangeStep()}}>
            <div className="form-group">
                <div className="form-input">
                    <label className="label" >First Name</label>
@@ -90,7 +39,7 @@ const [details,setDetails]=React.useState({
                    { error === "firstname"?<p className="validate" >please enter your name</p>:""}
                </div>
                <div className="form-input">
-                   <label className="label" required>Last Name</label>
+                   <label className="label" >Last Name</label>
                    <input
                    className="input" 
                    type="text" 
@@ -103,15 +52,14 @@ const [details,setDetails]=React.useState({
            </div>
            <div className="form-group">
                <div className="form-email">
-                   <label className="label" required>Email</label>
+                   <label className="label" >Email</label>
                    <input 
                    className="input" 
                    type="text" 
                    placeholder="Survishirodkar@gmail.com" 
-                   required
+                  required
                    onChange={(e)=>setDetails({...details,email:e.target.value})}
                    ></input>
-                    { error === "email"?<p className="validate" >please enter your email</p>:""}
                </div>
            </div>
            <div className="form-group">
@@ -124,7 +72,6 @@ const [details,setDetails]=React.useState({
                    required
                    onChange={(e)=>setDetails({...details,contactno:e.target.value})}
                    ></input>
-                    { error === "contactno"?<p className="validate" >please enter your contact number</p>:""}
                </div>
            </div>
            <div className="form-group">
@@ -136,9 +83,7 @@ const [details,setDetails]=React.useState({
                    placeholder="Bicholim" 
                    required
                    onChange={(e)=>setDetails({...details,city:e.target.value})}
-                   required
                    ></input>
-                     { error === "city"?<p className="validate" >please enter your city</p>:""}
                </div>
                <div className="form-input">
                <label className="label" >State</label>
@@ -146,41 +91,38 @@ const [details,setDetails]=React.useState({
                    className="input" 
                    type="text" 
                    placeholder="Goa" 
-                  required
+                   required
                    onChange={(e)=>setDetails({...details,state:e.target.value})}
                    ></input>
-                     { error === "state"?<p className="validate" >please enter your state</p>:""}
                </div>
            </div>
            <div className="form-group">
                <div className="form-input">
                <label className="label" >Event</label>
-                  <select className="input" required  onChange={(e)=>setDetails({...details,event:e.target.value})} >
+                  <select className="input" >
                       <option 
                       value="fact"  
-                     
+                      onChange={(e)=>setDetails({...details,event:e.target.value})}
                       >Fact</option>
                       <option 
                       value="happenings"  
-                     
+                      onChange={(e)=>setDetails({...details,firstname:e.target.value})}
                       >Happenings</option>
                   </select>
-                  { error === "event"?<p className="validate" >please enter your event</p>:""}
                </div>
                <div className="form-input">
                    <label className="label" >Gender</label>
-                  <select className="input" required onChange={(e)=>setDetails({...details,gender:e.target.value})}
+                  <select className="input" onChange={(e)=>setDetails({...details,gender:e.target.value})}
 >
                       <option value="male"  >Male</option>
                       <option value="male"  >Female</option>
                   </select>
-                  { error === "gender"?<p className="validate" >please enter your gender</p>:""}
                </div>
            </div>
            <div className="form-group">
              <div className="form-input">
                  <label className="label" >Type of Ticket</label>
-                     <select className="input" required onChange={(e)=>setDetails({...details,ticket:e.target.value})}
+                     <select className="input" onChange={(e)=>setDetails({...details,ticket:e.target.value})}
 >
                          <option 
                          value="VIP"  
@@ -189,24 +131,11 @@ const [details,setDetails]=React.useState({
                          value="normal"  
                          >Normal</option>
                      </select>
-                     { error === "ticket"?<p className="validate" >please enter your ticket</p>:""}
                  </div>
            </div>
-           <button type="text" className="button" onClick={()=>ChangeStep()}>Save</button>
+           <button type="text" className="button">Save</button>
         </form>
      </div>
 
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
