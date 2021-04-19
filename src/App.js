@@ -1,6 +1,8 @@
 
 import { Route, Switch } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import { MyContextProvider } from './Components/Dashboard/Context/Context';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Login from './Components/Dashboard/Login';
 
@@ -8,7 +10,8 @@ import Login from './Components/Dashboard/Login';
 
 function App() {
   return (
-    
+    <BrowserRouter>
+    <MyContextProvider>
     <div className="App">
       <Switch>
         <Route path='/login' component = {Login}></Route>
@@ -18,6 +21,8 @@ function App() {
       </Switch>
     
     </div>
+    </MyContextProvider>
+    </BrowserRouter>
   );
 }
 

@@ -6,7 +6,10 @@ import "./login.scss";
 
 export default function Login() {
   let history=useHistory();
-  const [credentials,setCredentials]= React.useState({email: "", password:""});
+  const [credentials,setCredentials]= React.useState({
+    email: "",
+     password:""
+    });
   const [error,setError]= React.useState("");
  
   const SubmitCredentials = ()=>{

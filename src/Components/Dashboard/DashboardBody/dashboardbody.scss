@@ -1,0 +1,33 @@
+.dashboardbody-main{
+   height: 100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+   
+    .dash-header{
+        height: 15%;
+      
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 2%; 
+    
+        }
+        .dash-head-email{
+            display: flex;
+        }
+        .email{
+            margin: 0px;
+            padding-top: 20px;
+            padding-left: 15px;
+        }
+        .cancel , .logout{
+            cursor: pointer;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .dash-body{
+            height: 85%;
+            width: 100%;
+        }
+    }

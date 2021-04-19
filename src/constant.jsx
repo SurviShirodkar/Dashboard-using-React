@@ -7,7 +7,9 @@ export let constantarray={
                 gender:"female",
                 email:"survishirodkar@gmail.com",
                 eventname:"fact",
-                password:"shailesh"},
+                password:"shailesh",
+                image:"https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4-300x300.png"
+        },
      
                 {firstname:"urvi",
                 lastname:"shirodkar",
@@ -15,7 +17,8 @@ export let constantarray={
                 gender:"female",
                 email:"urvishirodkar@gmail.com",
                 eventname:"fact1",
-                password:"shailesh22"},
+                password:"shailesh22",
+                image:"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F220453%2Fpexels-photo-220453.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fprofile%2520picture%2F&tbnid=B3G4vEo9lSBh0M&vet=12ahUKEwjgzOy7xoDwAhXVOysKHUoMD4UQMygCegUIARDVAQ..i&docid=FvQHUVZ-cx81xM&w=500&h=750&q=profile%20image&ved=2ahUKEwjgzOy7xoDwAhXVOysKHUoMD4UQMygCegUIARDVAQ"},
      
                 {firstname:"vi",
                 lastname:"shirodkar",
@@ -23,7 +26,8 @@ export let constantarray={
                 gender:"female",
                 email:"vishirodkar@gmail.com",
                 eventname:"fact2",
-                password:"shailesh16"}
+                password:"shailesh16",
+                image:"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F220453%2Fpexels-photo-220453.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fprofile%2520picture%2F&tbnid=B3G4vEo9lSBh0M&vet=12ahUKEwjgzOy7xoDwAhXVOysKHUoMD4UQMygCegUIARDVAQ..i&docid=FvQHUVZ-cx81xM&w=500&h=750&q=profile%20image&ved=2ahUKEwjgzOy7xoDwAhXVOysKHUoMD4UQMygCegUIARDVAQ"}
      
              ]
      }

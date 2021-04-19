@@ -1,16 +1,16 @@
 .dashboard-main{
     height:100%;
     width:100%;
-    border:1px solid red;
+    
     display: flex;
     .dashboard-sidebar{
         height: 100%;
         width: 20%;
-        border:1px solid rebeccapurple;
+       
     }
     .dashboard-body{
         height: 100%;
         width: 80%;
-        border:1px solid black;
+        border-left:1px solid grey;
     }
 }

@@ -1,0 +1,53 @@
+.step-two{
+    height: 100%;
+    width:100%;
+    padding:1% 3%;
+    .steptwo-title{
+        text-align: left;
+    }
+   
+    .button{
+        float: left;
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        width: 15%;
+        background-color: blue;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        }
+
+.step2-box{
+    width: 60%;
+    height: 100%;
+    margin:0px;
+    box-sizing: border-box;
+    display: flex;
+   
+    .box-card{
+        padding: 10px;
+        width: 50%;
+        height: 100%;
+        border:1px solid rgb(241, 236, 236);
+        border-radius: 15px;
+        margin: 2% 2% 2% 0%;
+        text-align: left;
+        font-size: 13px;
+        background-color: rgb(217, 215, 226);
+       
+       .step2-para{
+          margin: 0px;
+         
+       }
+       .feature{
+        margin: 20px 0px;
+    }
+    }
+}
+p{
+    margin:10px 0px 0px 10px;
+
+}
+
+}
