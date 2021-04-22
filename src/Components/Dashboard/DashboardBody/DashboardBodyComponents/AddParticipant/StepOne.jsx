@@ -2,23 +2,13 @@ import React, {useContext} from 'react'
 import { MyContext } from '../../../Context/Context';
 import './stepone.scss'
 
-export default function StepOne({setStep}) {
+export default function StepOne({setStep,details,setDetails}) {
 const plist=  useContext(MyContext);   
 const [error,setError]=React.useState("");
-const [details,setDetails]=React.useState({
-    firstname:"",
-    lastname:"",
-    email:"",
-    contactno:"",
-    city:"",
-    state:"",
-    event:"",
-    gender:"",
-    ticket:""
-}); 
+
   const ChangeStep = () =>{
       setStep(1)
-     
+      plist.updateParticipantList([...plist.participantList,details]);
   }
 
 
@@ -34,9 +24,9 @@ const [details,setDetails]=React.useState({
                    type="text" 
                    required
                    placeholder="Survi" 
-                   onChange={(e)=>setDetails({...details,firstname:e.target.value})}
+                   onChange={(e)=>setDetails({...details,firstName:e.target.value})}
                    ></input>
-                   { error === "firstname"?<p className="validate" >please enter your name</p>:""}
+                 
                </div>
                <div className="form-input">
                    <label className="label" >Last Name</label>
@@ -45,9 +35,9 @@ const [details,setDetails]=React.useState({
                    type="text" 
                    placeholder="Shirodkar" 
                    required
-                   onChange={(e)=>setDetails({...details,lastname:e.target.value})}
+                   onChange={(e)=>setDetails({...details,lastName:e.target.value})}
                    ></input>
-                     { error === "lastname"?<p className="validate" >please enter your lastname</p>:""}
+                   
                </div>
            </div>
            <div className="form-group">
@@ -70,7 +60,7 @@ const [details,setDetails]=React.useState({
                    type="text" 
                    placeholder="9370071402" 
                    required
-                   onChange={(e)=>setDetails({...details,contactno:e.target.value})}
+                   onChange={(e)=>setDetails({...details,contact:e.target.value})}
                    ></input>
                </div>
            </div>
@@ -99,31 +89,31 @@ const [details,setDetails]=React.useState({
            <div className="form-group">
                <div className="form-input">
                <label className="label" >Event</label>
-                  <select className="input" >
-                      <option 
-                      value="fact"  
-                      onChange={(e)=>setDetails({...details,event:e.target.value})}
+                  <select className="input" name="event" id="event" required  onChange={(e)=>setDetails({...details,event:e.target.value})} >
+                  <option value=""  >please select</option>               
+                     
+                      <option value="fact"                   
                       >Fact</option>
-                      <option 
-                      value="happenings"  
-                      onChange={(e)=>setDetails({...details,firstname:e.target.value})}
-                      >Happenings</option>
+                      <option value="happenings"  
+                       >Happenings</option>
                   </select>
                </div>
                <div className="form-input">
+              
                    <label className="label" >Gender</label>
-                  <select className="input" onChange={(e)=>setDetails({...details,gender:e.target.value})}
->
+                  <select className="input" required  onChange={(e)=>setDetails({...details,gender:e.target.value})}
+>                     <option value=""  >please select</option>               
                       <option value="male"  >Male</option>
                       <option value="male"  >Female</option>
                   </select>
                </div>
            </div>
-           <div className="form-group">
+           {/* <div className="form-group">
              <div className="form-input">
                  <label className="label" >Type of Ticket</label>
-                     <select className="input" onChange={(e)=>setDetails({...details,ticket:e.target.value})}
->
+                     <select className="input" required  onChange={(e)=>setDetails({...details,ticket:e.target.value})}
+>                          <option value=""                   
+                      >please select</option>
                          <option 
                          value="VIP"  
                          >VIP</option>
@@ -132,7 +122,7 @@ const [details,setDetails]=React.useState({
                          >Normal</option>
                      </select>
                  </div>
-           </div>
+           </div> */}
            <button type="text" className="button">Save</button>
         </form>
      </div>

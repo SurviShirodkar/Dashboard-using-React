@@ -35,7 +35,11 @@
         text-align: left;
         font-size: 13px;
         background-color: rgb(217, 215, 226);
-       
+        cursor: pointer;
+       &:hover{
+           transform: scale(1.2);
+           transition: 1s;
+       }
        .step2-para{
           margin: 0px;
          

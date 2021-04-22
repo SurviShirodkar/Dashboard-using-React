@@ -5,7 +5,8 @@ export  class MyContextProvider extends Component {
       //Here all your global states will come
       state = {
        userDetails: {},
-       participantList:[]
+       participantList: undefined
+
     }
     
     updateUserDetails = (data) => {

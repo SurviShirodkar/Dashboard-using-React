@@ -24,16 +24,18 @@ export default function DashboardBody() {
               <img src={mood.userDetails.image} className="cancel"></img>
               <p className="email">{mood.userDetails.firstname}</p>
           </div>
-             <img src={logout} className="logout"></img>
+             <img src={logout} className="logout" height="10px;"></img>
           </div>
         <div className="dash-body">
           <Switch>
-          <Route path='/addparticipant' component={AddParticipant}></Route>
-          <Route path='/viewevents' component={ViewEvents}></Route>
-          <Route path='/viewparticipant' component={ViewParticipant}></Route>
-          <Route path="/addevents" component={AddEvents}></Route>
-          <Route path="/" component={AddParticipant}></Route>
-          <Redirect to='/viewparticipant'></Redirect>
+         
+          <Route path='/dashboard/addParticipant' component={AddParticipant}></Route>
+          <Route path='/dashboard/viewEvents' component={ViewEvents}></Route>
+          <Route path='/dashboard/viewParticipant' component={ViewParticipant}></Route>
+          <Route path="/dashboard/addEvents" component={AddEvents}></Route>
+          <Route path="/dashboard/" component={AddParticipant}></Route>
+         
+          <Redirect to='/dashboard/viewParticipant'></Redirect>
           </Switch>
           
         </div>
