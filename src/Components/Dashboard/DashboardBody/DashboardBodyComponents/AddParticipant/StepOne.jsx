@@ -92,10 +92,11 @@ const [error,setError]=React.useState("");
                   <select className="input" name="event" id="event" required  onChange={(e)=>setDetails({...details,event:e.target.value})} >
                   <option value=""  >please select</option>               
                      
-                      <option value="fact"                   
-                      >Fact</option>
-                      <option value="happenings"  
-                       >Happenings</option>
+                      {
+                          plist.eventList.map(obj =>
+                            <option value={obj._id}  >{obj.name}</option> 
+                            )
+                      }
                   </select>
                </div>
                <div className="form-input">

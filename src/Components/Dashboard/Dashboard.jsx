@@ -24,22 +24,27 @@ export default function Dashboard() {
       
 
   };
+  const setupEvent = async() =>{
+      let res = await axios.get(`https://protected-fjord-14530.herokuapp.com/api/events`);
+      console.log("RESPONSE",res);
+      console.log(res.data);
+     term.updateEventList(res.data);
+  };
   useEffect(() => {
     getInfo();
     setupParticipant();
-    
+    setupEvent();
     },[]);
     return (
       
         <div className="dashboard-main">
             
             <div className="dashboard-sidebar">
-            
-              <DashboardSidebar/>
+            <DashboardSidebar/>
             </div>
             <div className="dashboard-body">
-           
-              <DashboardBody/>
+           <DashboardBody/>
+             
             
             </div>
         </div>

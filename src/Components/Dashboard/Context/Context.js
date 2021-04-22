@@ -5,7 +5,8 @@ export  class MyContextProvider extends Component {
       //Here all your global states will come
       state = {
        userDetails: {},
-       participantList: undefined
+       participantList: undefined,
+       eventList:[]
 
     }
     
@@ -14,6 +15,9 @@ export  class MyContextProvider extends Component {
     }
     updateParticipantList = (list) =>{
         this.setState({participantList:list})
+    }
+    updateEventList = (elist) =>{
+        this.setState({eventList:elist})
     }
 
     // //Here all your gloabl functions will be defined.
@@ -28,7 +32,8 @@ export  class MyContextProvider extends Component {
                     ...this.state,
                     // But for function you need to pass each and every one manually
                    updateUserDetails: this.updateUserDetails,
-                   updateParticipantList:this.updateParticipantList
+                   updateParticipantList:this.updateParticipantList,
+                   updateEventList:this.updateEventList
                 }}
             >
                 {/* This say that.. if you wrap any component with this then the value can be passed */}
