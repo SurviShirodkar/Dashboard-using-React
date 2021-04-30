@@ -24,8 +24,10 @@ export default function DashboardSidebar() {
 }
 const sidebarlist=[
     {listname :"View Participant", id:"viewparticipant", icon:AddImage, route:"dashboard/viewParticipant"},
-    {listname :"Add Event", id:"viewparticipant", icon:ViewImage , route:"dashboard/viewEvents"},
-    {listname :"Add Participant", id:"viewparticipant", icon:AddImage, route:"dashboard/addParticipant"},
-    {listname :"view Events", id:"viewparticipant", icon:ViewImage, route:"dashboard/viewEvents"},
-    {listname :"Settings", id:"viewparticipant", icon:AddImage, route:"dashboard/settings"},
+    {listname :"Add Event", id:"addevent", icon:ViewImage , route:"dashboard/viewEvents"},
+    {listname :"Add Participant", id:"addparticipant", icon:AddImage, route:"dashboard/addParticipant"},
+    {listname :"view Events", id:"viewevents", icon:ViewImage, route:"dashboard/viewEvents"},
+    {listname :"profile", id:"profile", icon:AddImage, route:"dashboard/profile"},
+    {listname :"Settings", id:"settings", icon:AddImage, route:"dashboard/settings"},
+   
 ]

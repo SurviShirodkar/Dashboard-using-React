@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import {useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import { constantarray } from "../../constant";
 import leftimage from "./leftimage.svg";
 import "./login.scss";
+import axios from 'axios'
 
 export default function Login() {
   let history=useHistory();
@@ -12,16 +14,21 @@ export default function Login() {
     });
   const [error,setError]= React.useState("");
  
-  const SubmitCredentials = ()=>{
- 
-  const temp = constantarray.users.find(e => e.email === credentials.email);
-  console.log(temp);
-  if(!temp){
-    setError("email");
-    return;
-  }
-  if(credentials.password === temp.password){
+
+
+  const SubmitCredentials = async()=>{
+   let res = await axios.post(`https://protected-fjord-14530.herokuapp.com/api/users/login`,credentials);
+   console.log(res);
+  // const temp = res.data.users.find(e => e.email === credentials.email);
+  // console.log(temp.password);
+  // console.log(temp);
+  // if(!temp){
+  //   setError("email");
+  //   return;
+  // }
+  if(res.data.status === true){
   history.push("/Dashboard");
+  localStorage.setItem("token",res.data.token);
   localStorage.setItem("email",credentials.email);
   }
   else
@@ -71,6 +78,9 @@ export default function Login() {
              {error === "password"?<p className="validate-email">please enter valid password</p>:""}
           </div>
           <button type="button" className="l-b-r-submit" onClick={()=> SubmitCredentials()}>Submit</button>
+
+          <p>Dont have a Account ?<Link to="/signup">sign up</Link></p>
+          
         
          
          
@@ -79,6 +89,7 @@ export default function Login() {
          
         </div>
       </div>
+ 
     </div>
   );
 }
