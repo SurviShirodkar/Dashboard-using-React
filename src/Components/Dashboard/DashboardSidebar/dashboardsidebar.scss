@@ -2,7 +2,8 @@
  width: 100%;
  height: 100%;
  box-sizing: border-box;
- padding: 25px 50px;
+ padding: 25px 35px;
+ text-align: center;
  .sidebar-h4{
      text-align: left;
     
@@ -16,9 +17,14 @@
  }
  .menu{
      display: flex;
+    &:hover{
+        background-color: rgb(250, 248, 248);
+    }
     
     
-    
+ }
+ .sidebar-text{
+     text-decoration: none;
  }
  .menu-image{
      height: 20px;

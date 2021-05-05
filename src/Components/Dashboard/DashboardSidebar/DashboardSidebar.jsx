@@ -12,7 +12,7 @@ export default function DashboardSidebar() {
           <p className="sidebar-menu">Menu</p>
           {
             sidebarlist.map(obj=>
-                <Link  to={`/${obj.route}`}  >
+                <Link className="sidebar-text"  to={`/${obj.route}`}  >
             <div className="menu">
                 <img src={obj.icon} alt="image" className="menu-image"></img>
                <h5 className="sidebar-menu-name">{obj.listname}</h5>

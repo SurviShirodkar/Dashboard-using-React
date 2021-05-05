@@ -29,6 +29,9 @@
         .table-row{
             border-bottom: 1px solid rgb(31, 6, 6);
             overflow-y: scroll;
+            &:hover{
+                background-color: rgb(216, 215, 215);
+            }
         }
        th{
            border-bottom: 1px solid black;

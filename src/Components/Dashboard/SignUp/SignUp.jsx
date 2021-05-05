@@ -8,6 +8,7 @@ import axios from 'axios'
 
 export default function SignUp() {
     let history = useHistory();
+    const[load,setLoad]= React.useState();
     const [password,setPassword]=React.useState();
    
     const[details,setDetails]=React.useState({
@@ -18,15 +19,21 @@ export default function SignUp() {
         password:""
     })
     const submitDetails = async() => {
-       
-       
+     
+      if( !details.firstName || !details.lastName || !details.contact || !details.email || !details.password || !password ){
+       alert("please fill in all details");
+       return
+       }
+     
         if(password === details.password){
+          setLoad(true);
             const res = await axios.post(`https://protected-fjord-14530.herokuapp.com/api/users`, details);
-           
+           setLoad(false);
             console.log(res);
-            history.push("/login");
+           
             if(res.data.status === true){
                 alert("status is true");
+                history.push("/login");
 
             }
             else{
@@ -41,7 +48,7 @@ export default function SignUp() {
     
        
     }
-    return (
+    return ( load? <h3>Loading...</h3>:
         <div className="signup-main">
     
       <div className="signup-block">

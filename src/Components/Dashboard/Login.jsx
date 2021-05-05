@@ -7,6 +7,7 @@ import "./login.scss";
 import axios from 'axios'
 
 export default function Login() {
+  const[ load ,setLoad] = React.useState();
   let history=useHistory();
   const [credentials,setCredentials]= React.useState({
     email: "",
@@ -17,7 +18,9 @@ export default function Login() {
 
 
   const SubmitCredentials = async()=>{
+    setLoad(true);
    let res = await axios.post(`https://protected-fjord-14530.herokuapp.com/api/users/login`,credentials);
+  setLoad(false);
    console.log(res);
   // const temp = res.data.users.find(e => e.email === credentials.email);
   // console.log(temp.password);
@@ -27,18 +30,28 @@ export default function Login() {
   //   return;
   // }
   if(res.data.status === true){
+    setLoad(true);
   history.push("/Dashboard");
+  
   localStorage.setItem("token",res.data.token);
   localStorage.setItem("email",credentials.email);
   }
   else
   {
-  setError("password");
- 
+    if ( res.data.message ==="Wrong Email" )
+    {
+      setError("email");
+    }
+    if ( res.data.message === "Wrong Password")
+    {
+      setError("password");
+    }
+  
+  
   }
 
   };
-  return (
+  return ( load?<h2>Loading....</h2>:
     <div className="login-main">
     
       <div className="login-block">
@@ -48,7 +61,7 @@ export default function Login() {
         <div className="l-b-right">
           <div className="l-b-r-text">
             <h2>Get Started</h2>
-            <p>ehfbhjhfkef ejfheuhfker fnerbfuiefr eferhfirehfn</p>
+            <p>Log In</p>
           </div>
           <div className="l-b-r-buttons">
             <button>Sign Up With Google</button>
@@ -79,7 +92,7 @@ export default function Login() {
           </div>
           <button type="button" className="l-b-r-submit" onClick={()=> SubmitCredentials()}>Submit</button>
 
-          <p>Dont have a Account ?<Link to="/signup">sign up</Link></p>
+          <p >Dont have a Account ?<Link to="/signup" className="login-account">sign up</Link></p>
           
         
          

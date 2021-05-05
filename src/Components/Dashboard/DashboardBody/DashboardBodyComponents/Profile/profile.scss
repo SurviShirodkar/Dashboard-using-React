@@ -70,4 +70,34 @@
     border-radius: 10px;
     cursor: pointer;
     }
+    .edit-button{
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        width: 10%;
+        background-color: blue;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        float: right;
+    }
+    .edit-button-red{
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        width: 10%;
+        background-color: rgb(121, 49, 15);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        float: right;
+    }
+    .user-detail{
+        display: flex;
+        margin-bottom: 50px;
+        .email-conta{
+            font-size: 12px;
+            margin-top: 20px;
+        }
+    }
 }

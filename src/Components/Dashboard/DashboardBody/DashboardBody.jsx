@@ -3,7 +3,7 @@ import { MyContext } from '../Context/Context'
 import './dashboardbody.scss'
 import Cancel from './cancel.png'
 import logout from './logout.png'
-import { Redirect, Route, Switch } from 'react-router'
+import { Redirect, Route, Switch, useHistory } from 'react-router'
 import AddParticipant from './DashboardBodyComponents/AddParticipant/AddParticipant'
 import ViewEvents from './DashboardBodyComponents/ViewEvents/ViewEvents'
 import ViewParticipant from './DashboardBodyComponents/ViewParticipant/ViewParticipant'
@@ -14,6 +14,7 @@ import Profile from './DashboardBodyComponents/Profile/Profile'
 
 export default function DashboardBody() {
    const mood = useContext(MyContext);
+   let history = useHistory();
   
   let email= localStorage.getItem("email");
   const [load,setLoad]= React.useState();
@@ -28,6 +29,11 @@ export default function DashboardBody() {
   mood.updateUserDetails(res.data.user);
  
  
+  }
+  const logoutAccount = ()=>{
+    localStorage.clear();
+    history.push("/login");
+
   }
   useEffect(() => {
    getDashboardBodyDetails();
@@ -44,7 +50,7 @@ export default function DashboardBody() {
               <img src="" className="cancel"></img>
               <p className="email">{mood?.userDetails?.email}</p>
           </div>
-             <img src={logout} className="logout" height="10px;"></img>
+             <img src={logout} className="logout" height="10px;" onClick={()=>logoutAccount()}></img>
           </div>
         <div className="dash-body">
           <Switch>

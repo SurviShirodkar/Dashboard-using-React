@@ -28,7 +28,11 @@ const plist= useContext(MyContext);
                     </thead>
                    
                         {
-plist.participantList.map(obj =>
+plist.participantList.filter( obj => {
+    return obj.firstName.includes(search);
+}
+    
+    ).map(obj =>
     <tr  className="table-row">
     <td className="table-name">
         <button className="table-button">{obj.ticket === "vip"?"V":"N"}</button>
